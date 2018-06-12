@@ -1,0 +1,12 @@
+Notes for /home/croutons/github/morg directory
+[2018-05-07]==========================================================
+
+ADMIN:
+    - Consolidate mewts etc. into this directory/repo
+    - Call the 'morg' stuff mwiki or miki 
+
+IDEAS: 
+    - 'today' script that opens vim at startup; this script prompts the
+      user to enter what needs to be done today. 
+    - This is then used to form the 'Today' page of the wiki
+[2018-05-14]==========================================================
