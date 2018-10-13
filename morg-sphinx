@@ -1,13 +1,15 @@
 #!/bin/bash 
 
 
-cd ~/Dropbox/wiki/
+cd ~/Dropbox/wiki/md
 /usr/bin/find . -name "*.md" | while read i; do 
-    file_name="${i##*/}"; rst_dir="${i%${file_name}}";new_rst_dir="/home/redbeak/Dropbox/docs/source${rst_dir//md/rst}";
+    file_name="${i##*/}"; rst_dir="${i%${file_name}}"; new_rst_dir="/home/redbeak/Dropbox/docs/source/${rst_dir#./}";
     if [ ! -d "$new_rst_dir" ]
     then 
         echo "${new_rst_dir} does not exist";
-        #mkdir $new_rst_dir
+        mkdir $new_rst_dir
     fi
-#    /usr/bin/pandoc -s -t rst "${i}" -o "${new_rst_dir}${file_name//md/rst}"
+    /usr/bin/pandoc -s -t rst "${i}" -o "${new_rst_dir}${file_name//md/rst}"
 done
+cd ~/Dropbox/docs
+make html

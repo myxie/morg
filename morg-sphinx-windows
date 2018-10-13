@@ -3,9 +3,7 @@
 
 cd /mnt/c/Users/gerald/Dropbox/wiki/md
 /usr/bin/find . -name "*.md" | while read i; do 
-    file_name="${i##*/}"; rst_dir="${i%${file_name}}";new_rst_dir="/mnt/c/Users/gerald/Dropbox/docs/source/${rst_dir#./}";
-    echo ${rst_dir}
-    echo ${new_rst_dir}
+    file_name="${i##*/}"; rst_dir="${i%${file_name}}"; new_rst_dir="/mnt/c/Users/gerald/Dropbox/docs/source/${rst_dir#./}";
     if [ ! -d "$new_rst_dir" ]
     then 
         echo "${new_rst_dir} does not exist";
